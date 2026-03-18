@@ -1,0 +1,23 @@
+{
+  "skill_name": "mztab-m-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I ran a lipidomics experiment on mouse liver tissue using a Q Exactive HF mass spectrometer in positive mode ESI. I processed the data with MS-DIAL 5.0. I have 3 control mice and 3 high-fat diet mice, each with one .mzML file (ctrl_1.mzML, ctrl_2.mzML, ctrl_3.mzML, hfd_1.mzML, hfd_2.mzML, hfd_3.mzML). I'd like to submit this to MetaboLights so the study ID will be MTBLS9999. Can you create an mzTab-M file with a couple of example lipids in the SML table?",
+      "expected_output": "A working Python script that creates a valid mzTab-M file. The script should: build a Metadata object with 6 ms_run entries, 6 assay entries, 2 study_variable groups (control and high-fat diet), instrument info for Q Exactive HF, MS-DIAL software entry, and appropriate CV declarations. It should also include at least 2 example SML rows for lipids. The final file should be written to disk as a .mztab TSV file.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I processed my plasma metabolomics data with XCMS 3.18 in R. I have two groups: 4 treated samples and 4 untreated samples. The LC-MS was run in both positive and negative ionization mode, so I have 8 positive .mzML files and 8 negative .mzML files (16 total). I used HMDB for identification. Help me write an mzTab-M file with 3 example metabolites — glucose, alanine, and citric acid.",
+      "expected_output": "A working Python script that creates a valid mzTab-M file. The metadata should reflect: 16 ms_run entries (8 positive, 8 negative), 8 assay entries (one per sample, each referencing both a positive and negative ms_run), 2 study variables (treated/untreated). XCMS should appear in the software field. The SML table should have 3 rows for glucose, alanine, and citric acid with HMDB identifiers and abundance values for each of the 8 assays.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I need to create the simplest possible valid mzTab-M file for my plasma metabolomics study. Just the required fields — I'll fill in the rest later. My study ID is LAB_2026_plasma. I used MZmine 3.9 and I have one mzML file called plasma_run1.mzML. One sample group.",
+      "expected_output": "A concise Python script producing a minimal but valid mzTab-M file. Should include only the required Metadata fields: mztab_version, mztab_id, quantification_method, software (MZmine 3.9), ms_run (1 entry), assay (1 entry), study_variable (1 entry), cv, small_molecule_quantification_unit, small_molecule_feature_quantification_unit, small_molecule_identification_reliability, and at least a database entry. The SML table should have at least one placeholder row. File must write without errors.",
+      "files": []
+    }
+  ]
+}
