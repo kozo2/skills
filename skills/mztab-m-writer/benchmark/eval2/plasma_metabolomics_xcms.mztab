@@ -1,0 +1,157 @@
+MTD	mzTab-version	2.0.0-M
+MTD	mzTab-ID	PLASMA_METABOLOMICS_XCMS_001
+MTD	title	Plasma Metabolomics Study: Treated vs Untreated (XCMS 3.18)
+MTD	description	Untargeted LC-MS metabolomics of human blood plasma comparing treated and untreated groups. Data was acquired in both positive and negative ionization mode (8 files each, 16 total). Peak picking and feature alignment performed with XCMS 3.18 in R. Metabolites identified against the Human Metabolome Database (HMDB).
+MTD	quantification_method	[MS, MS:1001834, LC-MS label-free quantitation analysis, ]
+MTD	sample[1]	plasma_treated_1
+MTD	sample[1]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[1]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	sample[2]	plasma_treated_2
+MTD	sample[2]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[2]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	sample[3]	plasma_treated_3
+MTD	sample[3]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[3]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	sample[4]	plasma_treated_4
+MTD	sample[4]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[4]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	sample[5]	plasma_untreated_1
+MTD	sample[5]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[5]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	sample[6]	plasma_untreated_2
+MTD	sample[6]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[6]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	sample[7]	plasma_untreated_3
+MTD	sample[7]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[7]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	sample[8]	plasma_untreated_4
+MTD	sample[8]-species[1]	[NCBITAXON, NCBITaxon:9606, Homo sapiens, ]
+MTD	sample[8]-tissue[1]	[BTO, BTO:0000131, blood plasma, ]
+MTD	software[1]	[MS, MS:1001582, XCMS, 3.18]
+MTD	ms_run[1]-location	file:///data/plasma_metabolomics/treated_1_pos.mzML
+MTD	ms_run[1]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[1]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[1]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[2]-location	file:///data/plasma_metabolomics/treated_2_pos.mzML
+MTD	ms_run[2]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[2]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[2]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[3]-location	file:///data/plasma_metabolomics/treated_3_pos.mzML
+MTD	ms_run[3]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[3]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[3]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[4]-location	file:///data/plasma_metabolomics/treated_4_pos.mzML
+MTD	ms_run[4]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[4]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[4]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[5]-location	file:///data/plasma_metabolomics/untreated_1_pos.mzML
+MTD	ms_run[5]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[5]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[5]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[6]-location	file:///data/plasma_metabolomics/untreated_2_pos.mzML
+MTD	ms_run[6]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[6]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[6]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[7]-location	file:///data/plasma_metabolomics/untreated_3_pos.mzML
+MTD	ms_run[7]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[7]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[7]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[8]-location	file:///data/plasma_metabolomics/untreated_4_pos.mzML
+MTD	ms_run[8]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[8]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[8]-scan_polarity[1]	[MS, MS:1000130, positive scan, ]
+MTD	ms_run[9]-location	file:///data/plasma_metabolomics/treated_1_neg.mzML
+MTD	ms_run[9]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[9]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[9]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	ms_run[10]-location	file:///data/plasma_metabolomics/treated_2_neg.mzML
+MTD	ms_run[10]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[10]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[10]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	ms_run[11]-location	file:///data/plasma_metabolomics/treated_3_neg.mzML
+MTD	ms_run[11]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[11]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[11]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	ms_run[12]-location	file:///data/plasma_metabolomics/treated_4_neg.mzML
+MTD	ms_run[12]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[12]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[12]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	ms_run[13]-location	file:///data/plasma_metabolomics/untreated_1_neg.mzML
+MTD	ms_run[13]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[13]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[13]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	ms_run[14]-location	file:///data/plasma_metabolomics/untreated_2_neg.mzML
+MTD	ms_run[14]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[14]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[14]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	ms_run[15]-location	file:///data/plasma_metabolomics/untreated_3_neg.mzML
+MTD	ms_run[15]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[15]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[15]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	ms_run[16]-location	file:///data/plasma_metabolomics/untreated_4_neg.mzML
+MTD	ms_run[16]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[16]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	ms_run[16]-scan_polarity[1]	[MS, MS:1000129, negative scan, ]
+MTD	assay[1]	treated_1
+MTD	assay[1]-ms_run_ref	ms_run[1]|ms_run[9]
+MTD	assay[2]	treated_2
+MTD	assay[2]-ms_run_ref	ms_run[2]|ms_run[10]
+MTD	assay[3]	treated_3
+MTD	assay[3]-ms_run_ref	ms_run[3]|ms_run[11]
+MTD	assay[4]	treated_4
+MTD	assay[4]-ms_run_ref	ms_run[4]|ms_run[12]
+MTD	assay[5]	untreated_1
+MTD	assay[5]-ms_run_ref	ms_run[5]|ms_run[13]
+MTD	assay[6]	untreated_2
+MTD	assay[6]-ms_run_ref	ms_run[6]|ms_run[14]
+MTD	assay[7]	untreated_3
+MTD	assay[7]-ms_run_ref	ms_run[7]|ms_run[15]
+MTD	assay[8]	untreated_4
+MTD	assay[8]-ms_run_ref	ms_run[8]|ms_run[16]
+MTD	study_variable[1]	treated
+MTD	study_variable[1]-assay_refs	assay[1]|assay[2]|assay[3]|assay[4]
+MTD	study_variable[1]-description	Plasma samples from treated subjects
+MTD	study_variable[2]	untreated
+MTD	study_variable[2]-assay_refs	assay[5]|assay[6]|assay[7]|assay[8]
+MTD	study_variable[2]-description	Plasma samples from untreated (control) subjects
+MTD	cv[1]-label	MS
+MTD	cv[1]-full_name	Mass Spectrometry Ontology
+MTD	cv[1]-version	4.1.38
+MTD	cv[1]-uri	https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo
+MTD	cv[2]-label	NCBITAXON
+MTD	cv[2]-full_name	NCBI organismal classification
+MTD	cv[2]-version	2023-06-20
+MTD	cv[2]-uri	http://purl.obolibrary.org/obo/ncbitaxon.owl
+MTD	cv[3]-label	BTO
+MTD	cv[3]-full_name	BRENDA Tissue Ontology
+MTD	cv[3]-version	2021-10-26
+MTD	cv[3]-uri	http://purl.obolibrary.org/obo/bto.owl
+MTD	cv[4]-label	HMDB
+MTD	cv[4]-full_name	Human Metabolome Database
+MTD	cv[4]-version	5.0
+MTD	cv[4]-uri	https://hmdb.ca
+MTD	small_molecule-quantification_unit	[MS, MS:1001839, area, ]
+MTD	small_molecule_feature-quantification_unit	[MS, MS:1001839, area, ]
+MTD	small_molecule-identification_reliability	[MS, MS:1002896, compound identification confidence level, ]
+MTD	database[1]	[HMDB, , Human Metabolome Database, ]
+MTD	database[1]-prefix	HMDB
+MTD	database[1]-version	5.0
+MTD	database[1]-uri	https://hmdb.ca
+
+
+SMH	SML_ID	SMF_ID_REFS	database_identifier	chemical_formula	smiles	inchi	chemical_name	uri	theoretical_neutral_mass	adduct_ions	reliability	best_id_confidence_measure	best_id_confidence_value	abundance_assay[1]	abundance_assay[2]	abundance_assay[3]	abundance_assay[4]	abundance_assay[5]	abundance_assay[6]	abundance_assay[7]	abundance_assay[8]
+SML	1	1	HMDB:HMDB0000122	C6H12O6	OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O	InChI=1S/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6?/m1/s1	glucose	https://hmdb.ca/metabolites/HMDB0000122	1.80063400000E+02	[M+H]+	2	[MS, MS:1002890, fragmentation score, ]	9.50000000000E-01	98500	102300	95700	99100	198000	205000	192500	201300	null	null
+SML	2	2	HMDB:HMDB0000161	C3H7NO2	C[C@@H](N)C(O)=O	InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m0/s1	alanine	https://hmdb.ca/metabolites/HMDB0000161	8.90477000000E+01	[M+H]+	2	[MS, MS:1002890, fragmentation score, ]	8.80000000000E-01	455000	461000	448000	457000	450000	467000	443000	460000	null	null
+SML	3	3	HMDB:HMDB0000094	C6H8O7	OC(CC(O)(C(O)=O)CC(O)=O)C(O)=O	InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)	citric acid	https://hmdb.ca/metabolites/HMDB0000094	1.92027000000E+02	[M-H]-	2	[MS, MS:1002890, fragmentation score, ]	9.10000000000E-01	320000	315000	328000	322000	158000	163000	155000	161000	null	null
+
+
+SFH	SMF_ID	SME_ID_REFS	SME_ID_REF_ambiguity_code	adduct_ion	isotopomer	exp_mass_to_charge	charge	retention_time_in_seconds	retention_time_in_seconds_start	retention_time_in_seconds_end	abundance_assay[1]	abundance_assay[2]	abundance_assay[3]	abundance_assay[4]	abundance_assay[5]	abundance_assay[6]	abundance_assay[7]	abundance_assay[8]
+SMF	1	1	null	[M+H]+	null	1.81071200000E+02	1	3.12500000000E+02	null	null	98500	102300	95700	99100	198000	205000	192500	201300
+SMF	2	2	null	[M+H]+	null	9.00550000000E+01	1	1.45200000000E+02	null	null	455000	461000	448000	457000	450000	467000	443000	460000
+SMF	3	3	null	[M-H]-	null	1.91019700000E+02	1	2.28800000000E+02	null	null	320000	315000	328000	322000	158000	163000	155000	161000
+
+
+SEH	SME_ID	evidence_input_id	database_identifier	chemical_formula	smiles	inchi	chemical_name	uri	derivatized_form	adduct_ion	exp_mass_to_charge	charge	theoretical_mass_to_charge	spectra_ref	identification_method	ms_level	id_confidence_measure[1]	rank
+SME	1	feat_001	HMDB:HMDB0000122	C6H12O6	OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O	InChI=1S/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6?/m1/s1	glucose	https://hmdb.ca/metabolites/HMDB0000122	null	null	null	null	null	ms_run[1]:scan=1234	[MS, MS:1001207, Mascot, ]	[MS, MS:1000511, ms level, 2]	9.50000000000E-01	1
+SME	2	feat_002	HMDB:HMDB0000161	C3H7NO2	C[C@@H](N)C(O)=O	InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m0/s1	alanine	https://hmdb.ca/metabolites/HMDB0000161	null	null	null	null	null	ms_run[1]:scan=876	[MS, MS:1001207, Mascot, ]	[MS, MS:1000511, ms level, 2]	8.80000000000E-01	1
+SME	3	feat_003	HMDB:HMDB0000094	C6H8O7	OC(CC(O)(C(O)=O)CC(O)=O)C(O)=O	InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)	citric acid	https://hmdb.ca/metabolites/HMDB0000094	null	null	null	null	null	ms_run[9]:scan=543	[MS, MS:1001207, Mascot, ]	[MS, MS:1000511, ms level, 2]	9.10000000000E-01	1

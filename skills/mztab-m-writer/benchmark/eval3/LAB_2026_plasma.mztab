@@ -1,0 +1,33 @@
+MTD	mzTab-version	2.0.0-M
+MTD	mzTab-ID	LAB_2026_plasma
+MTD	quantification_method	[MS, MS:1001834, LC-MS label-free quantitation analysis, ]
+MTD	software[1]	[MS, MS:1002342, MZmine, 3.9]
+MTD	ms_run[1]-location	file://plasma_run1.mzML
+MTD	ms_run[1]-format	[MS, MS:1000584, mzML file, ]
+MTD	ms_run[1]-id_format	[MS, MS:1001530, mzML native ID format, ]
+MTD	assay[1]	plasma_assay_1
+MTD	assay[1]-ms_run_ref	ms_run[1]
+MTD	study_variable[1]	plasma_group
+MTD	study_variable[1]-assay_refs	assay[1]
+MTD	study_variable[1]-description	Plasma sample group
+MTD	cv[1]-label	MS
+MTD	cv[1]-full_name	Mass Spectrometry Ontology
+MTD	cv[1]-version	4.1.38
+MTD	cv[1]-uri	https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo
+MTD	small_molecule-quantification_unit	[MS, MS:1001839, area, ]
+MTD	small_molecule_feature-quantification_unit	[MS, MS:1001839, area, ]
+MTD	small_molecule-identification_reliability	[MS, MS:1002896, compound identification confidence level, ]
+MTD	database[1]	[, , no database, ]
+MTD	database[1]-prefix	null
+MTD	database[1]-version	Unknown
+MTD	database[1]-uri	null
+
+
+SMH	SML_ID	SMF_ID_REFS	database_identifier	chemical_formula	smiles	inchi	chemical_name	uri	theoretical_neutral_mass	adduct_ions	reliability	best_id_confidence_measure	best_id_confidence_value	abundance_assay[1]
+SML	1	null	null	null	null	null	unknown	null	null	null	4	null	null	null	null	null
+
+
+SFH	SMF_ID	SME_ID_REFS	SME_ID_REF_ambiguity_code	adduct_ion	isotopomer	exp_mass_to_charge	charge	retention_time_in_seconds	retention_time_in_seconds_start	retention_time_in_seconds_end	abundance_assay[1]
+
+
+SEH	SME_ID	evidence_input_id	database_identifier	chemical_formula	smiles	inchi	chemical_name	uri	derivatized_form	adduct_ion	exp_mass_to_charge	charge	theoretical_mass_to_charge	spectra_ref	identification_method	ms_level	id_confidence_measure[1]	rank

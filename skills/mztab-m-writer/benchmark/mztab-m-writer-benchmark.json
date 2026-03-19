@@ -1,0 +1,363 @@
+{
+  "metadata": {
+    "skill_name": "mztab-m-writer",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-03-19T04:08:15Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 127.4,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "script_runs_without_error",
+          "passed": true,
+          "evidence": "MTBLS9999.mztab"
+        },
+        {
+          "text": "mztab_file_created",
+          "passed": true,
+          "evidence": "MTBLS9999.mztab"
+        },
+        {
+          "text": "has_six_ms_runs",
+          "passed": true,
+          "evidence": "found 6 ms_run IDs"
+        },
+        {
+          "text": "has_two_study_variables",
+          "passed": true,
+          "evidence": "found 2 study_variable IDs"
+        },
+        {
+          "text": "has_msdial_software",
+          "passed": true,
+          "evidence": "MS-DIAL found"
+        },
+        {
+          "text": "has_lipid_sml_rows",
+          "passed": true,
+          "evidence": "2 SML rows"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 107.2,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "script_runs_without_error",
+          "passed": true,
+          "evidence": "plasma_metabolomics_xcms.mztab"
+        },
+        {
+          "text": "mztab_file_created",
+          "passed": true,
+          "evidence": "plasma_metabolomics_xcms.mztab"
+        },
+        {
+          "text": "has_sixteen_ms_runs",
+          "passed": true,
+          "evidence": "found 16 ms_run IDs"
+        },
+        {
+          "text": "has_two_study_variables",
+          "passed": true,
+          "evidence": "found 2 study_variable IDs"
+        },
+        {
+          "text": "has_xcms_software",
+          "passed": true,
+          "evidence": "XCMS found"
+        },
+        {
+          "text": "has_three_sml_rows",
+          "passed": true,
+          "evidence": "glucose=True, alanine=True, citric=True"
+        },
+        {
+          "text": "has_hmdb_identifiers",
+          "passed": true,
+          "evidence": "HMDB: found"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 45.5,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "script_runs_without_error",
+          "passed": true,
+          "evidence": "LAB_2026_plasma.mztab"
+        },
+        {
+          "text": "mztab_file_created",
+          "passed": true,
+          "evidence": "LAB_2026_plasma.mztab"
+        },
+        {
+          "text": "has_correct_study_id",
+          "passed": true,
+          "evidence": "found"
+        },
+        {
+          "text": "has_mzmine_software",
+          "passed": true,
+          "evidence": "MZmine found"
+        },
+        {
+          "text": "has_required_metadata_fields",
+          "passed": true,
+          "evidence": "quant_method=True, cv=True, quant_unit=True, feat_unit=True, id_rel=True"
+        },
+        {
+          "text": "has_one_ms_run",
+          "passed": true,
+          "evidence": "1 ms_run(s), plasma_run1=found"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 122.4,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "script_runs_without_error",
+          "passed": true,
+          "evidence": "MTBLS9999_lipidomics.mztab"
+        },
+        {
+          "text": "mztab_file_created",
+          "passed": true,
+          "evidence": "MTBLS9999_lipidomics.mztab"
+        },
+        {
+          "text": "has_six_ms_runs",
+          "passed": true,
+          "evidence": "found 6 ms_run IDs"
+        },
+        {
+          "text": "has_two_study_variables",
+          "passed": true,
+          "evidence": "found 2 study_variable IDs"
+        },
+        {
+          "text": "has_msdial_software",
+          "passed": true,
+          "evidence": "MS-DIAL found"
+        },
+        {
+          "text": "has_lipid_sml_rows",
+          "passed": true,
+          "evidence": "2 SML rows"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 153.4,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "script_runs_without_error",
+          "passed": true,
+          "evidence": "plasma_metabolomics_xcms.mztab"
+        },
+        {
+          "text": "mztab_file_created",
+          "passed": true,
+          "evidence": "plasma_metabolomics_xcms.mztab"
+        },
+        {
+          "text": "has_sixteen_ms_runs",
+          "passed": true,
+          "evidence": "found 16 ms_run IDs"
+        },
+        {
+          "text": "has_two_study_variables",
+          "passed": true,
+          "evidence": "found 2 study_variable IDs"
+        },
+        {
+          "text": "has_xcms_software",
+          "passed": true,
+          "evidence": "XCMS found"
+        },
+        {
+          "text": "has_three_sml_rows",
+          "passed": true,
+          "evidence": "glucose=True, alanine=True, citric=True"
+        },
+        {
+          "text": "has_hmdb_identifiers",
+          "passed": true,
+          "evidence": "HMDB: found"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 99.2,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "script_runs_without_error",
+          "passed": true,
+          "evidence": "LAB_2026_plasma.mztab"
+        },
+        {
+          "text": "mztab_file_created",
+          "passed": true,
+          "evidence": "LAB_2026_plasma.mztab"
+        },
+        {
+          "text": "has_correct_study_id",
+          "passed": true,
+          "evidence": "found"
+        },
+        {
+          "text": "has_mzmine_software",
+          "passed": true,
+          "evidence": "MZmine found"
+        },
+        {
+          "text": "has_required_metadata_fields",
+          "passed": true,
+          "evidence": "quant_method=True, cv=True, quant_unit=True, feat_unit=True, id_rel=True"
+        },
+        {
+          "text": "has_one_ms_run",
+          "passed": true,
+          "evidence": "1 ms_run(s), plasma_run1=found"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 93.3667,
+        "stddev": 42.6664,
+        "min": 45.5,
+        "max": 127.4
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 125.0,
+        "stddev": 27.1934,
+        "min": 99.2,
+        "max": 153.4
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.00",
+      "time_seconds": "-31.6",
+      "tokens": "+0"
+    }
+  },
+  "notes": []
+}
