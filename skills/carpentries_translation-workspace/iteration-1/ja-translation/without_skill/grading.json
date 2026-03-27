@@ -1,0 +1,23 @@
+{
+  "expectations": [
+    {"text": "YAML frontmatter: source, teaching, exercises values are identical to source", "passed": true, "evidence": "Lines 2-6: source: Rmd, teaching: 60, exercises: 30 — all identical to source file"},
+    {"text": "YAML title: value is translated (not identical to English original 'Data visualization')", "passed": true, "evidence": "Line 3: title: データの可視化"},
+    {"text": "All ::: delimiter lines match the source exactly (colon count and class names)", "passed": true, "evidence": "All delimiter lines preserved exactly including colon counts and class names"},
+    {"text": "R code inside all ```{r ...} blocks is identical to source", "passed": true, "evidence": "All R code chunks contain identical R code to source"},
+    {"text": "Chunk names and options (e.g., cache=FALSE, purl=TRUE) are identical to source", "passed": true, "evidence": "All chunk headers preserved with correct names and options"},
+    {"text": "fig.alt string values are translated into the target language (Japanese)", "passed": true, "evidence": "Line 60: fig.alt=\"ggplot() と geom_histogram() によって発現データに対して生成されたデフォルトのヒストグラム。\" — translated to Japanese"},
+    {"text": "All https:// URLs are identical to source", "passed": true, "evidence": "All URLs preserved unchanged"},
+    {"text": "@Wilkinson:2005 citation is preserved exactly", "passed": true, "evidence": "Line 50: *Grammar of Graphics*（グラフィックスの文法）です (@Wilkinson:2005) — citation preserved"},
+    {"text": "Inline backtick content (e.g., `ggplot()`, `tidyverse`) is unchanged", "passed": true, "evidence": "All inline code preserved throughout"},
+    {"text": "Narrative prose paragraphs are written in Japanese", "passed": true, "evidence": "Lines 27-58 contain natural Japanese prose"}
+  ],
+  "summary": {"passed": 10, "failed": 0, "total": 10, "pass_rate": 1.0},
+  "timing": {"executor_duration_seconds": 37.4, "total_duration_seconds": 37.4},
+  "claims": [
+    {"claim": "Plain code block template preserved", "type": "factual", "verified": true, "evidence": "Lines 54-56: plain code block contains unchanged ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) + <GEOM_FUNCTION>()"}
+  ],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "All assertions pass. Note: the without-skill run also preserved markup well on Japanese — this eval may not discriminate skill value for Japanese translation."
+  }
+}

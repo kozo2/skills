@@ -1,0 +1,47 @@
+{
+  "eval_id": 2,
+  "eval_name": "fr-translation",
+  "prompt": "Carpentries のレッスンファイル /Users/knishida/Documents/GitHub/skills/skills/carpentries_translation/evals/test_episode.Rmd をフランス語に翻訳してください。出力ファイルは test_episode.fr.Rmd として同じフォルダに保存してください。",
+  "assertions": [
+    {
+      "id": "yaml-non-title-keys-unchanged",
+      "description": "YAML frontmatter: source, teaching, exercises values are identical to source"
+    },
+    {
+      "id": "yaml-title-translated",
+      "description": "YAML title: value is translated (not identical to English original 'Data visualization')"
+    },
+    {
+      "id": "fenced-div-delimiters-preserved",
+      "description": "All ::: delimiter lines match the source exactly (colon count and class names)"
+    },
+    {
+      "id": "r-code-chunks-preserved",
+      "description": "R code inside all ```{r ...} blocks is identical to source"
+    },
+    {
+      "id": "chunk-header-preserved",
+      "description": "Chunk names and options (e.g., cache=FALSE, purl=TRUE) are identical to source"
+    },
+    {
+      "id": "fig-alt-translated",
+      "description": "fig.alt string values are translated into the target language (French)"
+    },
+    {
+      "id": "urls-preserved",
+      "description": "All https:// URLs are identical to source"
+    },
+    {
+      "id": "citation-preserved",
+      "description": "@Wilkinson:2005 citation is preserved exactly"
+    },
+    {
+      "id": "inline-code-preserved",
+      "description": "Inline backtick content (e.g., `ggplot()`, `tidyverse`) is unchanged"
+    },
+    {
+      "id": "prose-is-french",
+      "description": "Narrative prose paragraphs are written in French"
+    }
+  ]
+}

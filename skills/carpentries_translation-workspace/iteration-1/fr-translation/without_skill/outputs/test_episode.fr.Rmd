@@ -1,0 +1,104 @@
+---
+source: Rmd
+title: Visualisation des données
+teaching: 60
+exercises: 30
+---
+
+```{r loaddata, echo=FALSE, purl=FALSE, message=FALSE}
+if (!file.exists("data/rnaseq.csv"))
+  download.file(url = "https://github.com/example/data/rnaseq.csv",
+                destfile = "data/rnaseq.csv")
+```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Produire des nuages de points et des boîtes à moustaches avec ggplot.
+- Modifier l'esthétique d'un graphique ggplot existant (notamment les étiquettes des axes et les couleurs).
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- Comment créer des graphiques de qualité publication dans R ?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Visualisation des données
+
+Nous commençons par charger les packages nécessaires. **`ggplot2`** est inclus dans
+le package **`tidyverse`**.
+
+```{r load-package, message=FALSE, purl=TRUE}
+library("tidyverse")
+```
+
+Si les données ne sont plus dans l'espace de travail, chargez celles que nous avons enregistrées lors de la leçon précédente.
+
+```{r load-data, eval=FALSE, purl=TRUE}
+rna <- read.csv("data/rnaseq.csv")
+```
+
+L'[aide-mémoire sur la visualisation des données](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+couvre les bases de `ggplot2`. La page web de `ggplot2`
+([https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)) fournit une documentation abondante.
+
+## Créer des graphiques avec `ggplot2`
+
+`ggplot2` est un package graphique qui permet de créer facilement des
+graphiques complexes à partir de données stockées dans un data frame. Le fondement théorique est la
+*Grammaire des Graphiques* (@Wilkinson:2005).
+
+Pour construire un graphique ggplot, utilisez le modèle de base suivant :
+
+```
+ggplot(data = <DONNÉES>, mapping = aes(<CORRESPONDANCES>)) + <FONCTION_GEOM>()
+```
+
+- utilisez la fonction `ggplot()` et liez le graphique à un data frame spécifique
+
+```{r first-ggplot, cache=FALSE, purl=TRUE, fig.alt="Histogramme par défaut produit par ggplot() et geom_histogram() pour les données d'expression."}
+ggplot(data = rna, mapping = aes(x = expression)) +
+  geom_histogram()
+```
+
+[^note]: Source : [aide-mémoire sur la visualisation des données](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf).
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Défi
+
+Vous avez probablement remarqué un message automatique qui apparaît lors du
+tracé de l'histogramme. Modifiez l'argument `bins` de `geom_histogram()`
+pour changer le nombre de classes.
+
+:::::::::::::::  solution
+
+## Solution
+
+```{r solution-bins, purl=TRUE, fig.alt="Histogramme avec 15 classes produit par ggplot() et geom_histogram()."}
+ggplot(rna, aes(x = expression)) +
+    geom_histogram(bins = 15)
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Nous pouvons appliquer une transformation log2 pour obtenir une distribution plus symétrique.
+Notez la petite constante (`+1`) pour éviter les valeurs `-Inf` pour les comptes nuls [^note].
+
+```{r log-transfo, cache=FALSE, purl=TRUE, fig.alt="Histogramme des valeurs d'expression transformées en log2 montrant une distribution plus symétrique."}
+rna <- rna |>
+  mutate(expression_log = log2(expression + 1))
+```
+
+Voir aussi les tutoriels vidéo ([partie 1](https://www.youtube.com/watch?v=h29g21z0a68) et
+[partie 2](https://www.youtube.com/watch?v=0m4yywqNPVY)) de Thomas Lin Pedersen.
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Utilisez `ggplot2` pour des visualisations de qualité publication dans R.
+- Ajoutez des couches avec l'opérateur `+` pour construire des graphiques complexes étape par étape.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::

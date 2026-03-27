@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {"text": "YAML frontmatter: source, teaching, exercises values are identical to source", "passed": true, "evidence": "Lines 2-6: source: Rmd, teaching: 60, exercises: 30 — all identical to source file"},
+    {"text": "YAML title: value is translated (not identical to English original 'Data visualization')", "passed": true, "evidence": "Line 3: title: データの可視化"},
+    {"text": "All ::: delimiter lines match the source exactly (colon count and class names)", "passed": true, "evidence": "Lines 14, 19, 21, 25, 67, 75, 84, 86, 99, 104 all preserve exact colon counts and class names (objectives, questions, challenge, solution, keypoints)"},
+    {"text": "R code inside all ```{r ...} blocks is identical to source", "passed": true, "evidence": "All R code chunks (loaddata, load-package, load-data, first-ggplot, solution-bins, log-transfo) contain identical R code"},
+    {"text": "Chunk names and options (e.g., cache=FALSE, purl=TRUE) are identical to source", "passed": true, "evidence": "E.g., line 60: ```{r first-ggplot, cache=FALSE, purl=TRUE, fig.alt=\"...\"} — chunk name and options preserved; line 32: ```{r load-package, message=FALSE, purl=TRUE}"},
+    {"text": "fig.alt string values are translated into the target language (Japanese)", "passed": true, "evidence": "Line 60: fig.alt=\"ggplot() と geom_histogram() によって生成された発現データのデフォルトヒストグラム。\" — translated to Japanese. Line 79 and 91 also translated."},
+    {"text": "All https:// URLs are identical to source", "passed": true, "evidence": "All URLs preserved: https://github.com/example/data/rnaseq.csv, https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf, https://ggplot2.tidyverse.org, https://www.youtube.com/watch?v=h29g21z0a68, https://www.youtube.com/watch?v=0m4yywqNPVY"},
+    {"text": "@Wilkinson:2005 citation is preserved exactly", "passed": true, "evidence": "Line 50: *グラフィックの文法* (@Wilkinson:2005) — citation preserved"},
+    {"text": "Inline backtick content (e.g., `ggplot()`, `tidyverse`) is unchanged", "passed": true, "evidence": "Lines 29-30: **`ggplot2`** and **`tidyverse`** preserved. All inline code like `ggplot()`, `bins`, `geom_histogram()`, `+1` preserved throughout"},
+    {"text": "Narrative prose paragraphs are written in Japanese", "passed": true, "evidence": "Lines 27-58 contain natural Japanese prose: 'まず、必要なパッケージを読み込みます', 'ワークスペースにまだ残っていない場合は', etc."}
+  ],
+  "summary": {"passed": 10, "failed": 0, "total": 10, "pass_rate": 1.0},
+  "timing": {"executor_duration_seconds": 54.3, "total_duration_seconds": 54.3},
+  "claims": [
+    {"claim": "Plain code block template preserved", "type": "factual", "verified": true, "evidence": "Lines 54-56: plain code block contains unchanged ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) + <GEOM_FUNCTION>()"}
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {"reason": "No assertion checks plain (non-R) code blocks — these are fenced blocks without {r ...}. The test file has one such block with <DATA>/<MAPPINGS>/<GEOM_FUNCTION>() placeholders. The without-skill French run incorrectly translated these. Adding a 'plain-code-blocks-preserved' assertion would catch this failure."}
+    ],
+    "overall": "Current assertions all pass. The missing gap is coverage of plain code blocks."
+  }
+}

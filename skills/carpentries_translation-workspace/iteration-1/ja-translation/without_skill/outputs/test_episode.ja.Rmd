@@ -1,0 +1,104 @@
+---
+source: Rmd
+title: データの可視化
+teaching: 60
+exercises: 30
+---
+
+```{r loaddata, echo=FALSE, purl=FALSE, message=FALSE}
+if (!file.exists("data/rnaseq.csv"))
+  download.file(url = "https://github.com/example/data/rnaseq.csv",
+                destfile = "data/rnaseq.csv")
+```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- ggplot を使って散布図と箱ひげ図を作成する。
+- 既存の ggplot グラフの見た目を変更する（軸ラベルや色など）。
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- R で出版品質のグラフを作成するにはどうすればよいですか？
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## データの可視化
+
+まず、必要なパッケージを読み込みます。**`ggplot2`** は
+**`tidyverse`** パッケージに含まれています。
+
+```{r load-package, message=FALSE, purl=TRUE}
+library("tidyverse")
+```
+
+ワークスペースにまだ残っていない場合は、前のレッスンで保存したデータを読み込みます。
+
+```{r load-data, eval=FALSE, purl=TRUE}
+rna <- read.csv("data/rnaseq.csv")
+```
+
+[データ可視化チートシート](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+では `ggplot2` の基本を説明しています。`ggplot2` のウェブページ
+([https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)) には豊富なドキュメントが掲載されています。
+
+## `ggplot2` によるプロット
+
+`ggplot2` はデータフレーム内のデータから複雑なグラフを簡単に作成できる
+プロットパッケージです。理論的な基盤は
+*Grammar of Graphics*（グラフィックスの文法）です (@Wilkinson:2005)。
+
+ggplot を構築するには、次の基本テンプレートを使用します：
+
+```
+ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) + <GEOM_FUNCTION>()
+```
+
+- `ggplot()` 関数を使って、グラフを特定のデータフレームに結びつけます
+
+```{r first-ggplot, cache=FALSE, purl=TRUE, fig.alt="ggplot() と geom_histogram() によって発現データに対して生成されたデフォルトのヒストグラム。"}
+ggplot(data = rna, mapping = aes(x = expression)) +
+  geom_histogram()
+```
+
+[^note]: 出典: [データ可視化チートシート](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)。
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## チャレンジ
+
+ヒストグラムを描画する際に自動メッセージが表示されることに
+おそらく気づいたでしょう。`geom_histogram()` の引数 `bins` を変更して
+ビンの数を変えてみましょう。
+
+:::::::::::::::  solution
+
+## 解答
+
+```{r solution-bins, purl=TRUE, fig.alt="ggplot() と geom_histogram() によって生成された 15 ビンのヒストグラム。"}
+ggplot(rna, aes(x = expression)) +
+    geom_histogram(bins = 15)
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+より対称的な分布を得るために log2 変換を適用できます。
+ゼロカウントで `-Inf` 値が生じないよう、小さな定数（`+1`）を加えることに注意してください [^note]。
+
+```{r log-transfo, cache=FALSE, purl=TRUE, fig.alt="より対称的な分布を示す log2 変換後の発現値のヒストグラム。"}
+rna <- rna |>
+  mutate(expression_log = log2(expression + 1))
+```
+
+Thomas Lin Pedersen によるビデオチュートリアル（[パート 1](https://www.youtube.com/watch?v=h29g21z0a68) と
+[パート 2](https://www.youtube.com/watch?v=0m4yywqNPVY)）も参照してください。
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- R での出版品質の可視化には `ggplot2` を使用する。
+- `+` 演算子でレイヤーを追加し、複雑なグラフを段階的に構築する。
+
+::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -1,0 +1,104 @@
+---
+source: Rmd
+title: Visualización de datos
+teaching: 60
+exercises: 30
+---
+
+```{r loaddata, echo=FALSE, purl=FALSE, message=FALSE}
+if (!file.exists("data/rnaseq.csv"))
+  download.file(url = "https://github.com/example/data/rnaseq.csv",
+                destfile = "data/rnaseq.csv")
+```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Producir diagramas de dispersión y diagramas de caja utilizando ggplot.
+- Modificar la estética de un gráfico ggplot existente (incluyendo etiquetas de ejes y colores).
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- ¿Cómo puedo crear gráficos de calidad para publicaciones en R?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Visualización de datos
+
+Comenzamos cargando los paquetes necesarios. **`ggplot2`** está incluido en
+el paquete **`tidyverse`**.
+
+```{r load-package, message=FALSE, purl=TRUE}
+library("tidyverse")
+```
+
+Si aún no están en el espacio de trabajo, carga los datos que guardamos en la lección anterior.
+
+```{r load-data, eval=FALSE, purl=TRUE}
+rna <- read.csv("data/rnaseq.csv")
+```
+
+La [Hoja de referencia de visualización de datos](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+cubre los conceptos básicos de `ggplot2`. La página web de `ggplot2`
+([https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)) proporciona amplia documentación.
+
+## Graficar con `ggplot2`
+
+`ggplot2` es un paquete de graficación que facilita la creación de gráficos
+complejos a partir de datos en un marco de datos. La base teórica es la
+*Gramática de los Gráficos* (@Wilkinson:2005).
+
+Para construir un gráfico con ggplot, utiliza la siguiente plantilla básica:
+
+```
+ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) + <GEOM_FUNCTION>()
+```
+
+- usa la función `ggplot()` y vincula el gráfico a un marco de datos específico
+
+```{r first-ggplot, cache=FALSE, purl=TRUE, fig.alt="Histograma predeterminado producido por ggplot() y geom_histogram() para los datos de expresión."}
+ggplot(data = rna, mapping = aes(x = expression)) +
+  geom_histogram()
+```
+
+[^note]: Fuente: [Hoja de referencia de visualización de datos](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf).
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Desafío
+
+Probablemente hayas notado un mensaje automático que aparece al
+dibujar el histograma. Cambia el argumento `bins` de `geom_histogram()`
+para modificar el número de intervalos.
+
+:::::::::::::::  solution
+
+## Solución
+
+```{r solution-bins, purl=TRUE, fig.alt="Histograma con 15 intervalos producido por ggplot() y geom_histogram()."}
+ggplot(rna, aes(x = expression)) +
+    geom_histogram(bins = 15)
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Podemos aplicar una transformación log2 para obtener una distribución más simétrica.
+Observa la pequeña constante (`+1`) para evitar valores `-Inf` para conteos de cero [^note].
+
+```{r log-transfo, cache=FALSE, purl=TRUE, fig.alt="Histograma de valores de expresión transformados en log2 que muestra una distribución más simétrica."}
+rna <- rna |>
+  mutate(expression_log = log2(expression + 1))
+```
+
+Consulta también los videotutoriales ([parte 1](https://www.youtube.com/watch?v=h29g21z0a68) y
+[parte 2](https://www.youtube.com/watch?v=0m4yywqNPVY)) de Thomas Lin Pedersen.
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Usa `ggplot2` para visualizaciones de calidad para publicaciones en R.
+- Añade capas con el operador `+` para construir gráficos complejos paso a paso.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -1,0 +1,104 @@
+---
+source: Rmd
+title: Data visualization
+teaching: 60
+exercises: 30
+---
+
+```{r loaddata, echo=FALSE, purl=FALSE, message=FALSE}
+if (!file.exists("data/rnaseq.csv"))
+  download.file(url = "https://github.com/example/data/rnaseq.csv",
+                destfile = "data/rnaseq.csv")
+```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Produce scatter plots and boxplots using ggplot.
+- Modify the aesthetics of an existing ggplot plot (including axis labels and color).
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How can I create publication-quality plots in R?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Data Visualization
+
+We start by loading the required packages. **`ggplot2`** is included in
+the **`tidyverse`** package.
+
+```{r load-package, message=FALSE, purl=TRUE}
+library("tidyverse")
+```
+
+If not still in the workspace, load the data we saved in the previous lesson.
+
+```{r load-data, eval=FALSE, purl=TRUE}
+rna <- read.csv("data/rnaseq.csv")
+```
+
+The [Data Visualization Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+covers the basics of `ggplot2`. The `ggplot2` webpage
+([https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)) provides ample documentation.
+
+## Plotting with `ggplot2`
+
+`ggplot2` is a plotting package that makes it simple to create complex
+plots from data in a data frame. The theoretical foundation is the
+*Grammar of Graphics* (@Wilkinson:2005).
+
+To build a ggplot, use the following basic template:
+
+```
+ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) + <GEOM_FUNCTION>()
+```
+
+- use the `ggplot()` function and bind the plot to a specific data frame
+
+```{r first-ggplot, cache=FALSE, purl=TRUE, fig.alt="Default histogram produced by ggplot() and geom_histogram() for the expression data."}
+ggplot(data = rna, mapping = aes(x = expression)) +
+  geom_histogram()
+```
+
+[^note]: Source: [Data Visualization Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf).
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge
+
+You have probably noticed an automatic message that appears when
+drawing the histogram. Change the argument `bins` of `geom_histogram()`
+to change the number of bins.
+
+:::::::::::::::  solution
+
+## Solution
+
+```{r solution-bins, purl=TRUE, fig.alt="Histogram with 15 bins produced by ggplot() and geom_histogram()."}
+ggplot(rna, aes(x = expression)) +
+    geom_histogram(bins = 15)
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+We can apply a log2 transformation to have a more symmetric distribution.
+Note the small constant (`+1`) to avoid `-Inf` values for zero counts [^note].
+
+```{r log-transfo, cache=FALSE, purl=TRUE, fig.alt="Histogram of log2-transformed expression values showing a more symmetric distribution."}
+rna <- rna |>
+  mutate(expression_log = log2(expression + 1))
+```
+
+See also the video tutorials ([part 1](https://www.youtube.com/watch?v=h29g21z0a68) and
+[part 2](https://www.youtube.com/watch?v=0m4yywqNPVY)) by Thomas Lin Pedersen.
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Use `ggplot2` for publication-quality visualizations in R.
+- Add layers with the `+` operator to build complex plots step by step.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
